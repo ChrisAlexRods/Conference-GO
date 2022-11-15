@@ -172,8 +172,9 @@ def api_list_locations(request):
             safe=False,
         )
 
-    def get_extra_data(self, o):
-        return {"state": o.state.abbreviation}
+
+def get_extra_data(self, o):
+    return {"state": o.state.abbreviation}
 
 
 @require_http_methods(["DELETE", "GET", "PUT"])

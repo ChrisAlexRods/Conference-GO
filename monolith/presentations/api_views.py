@@ -3,8 +3,12 @@ from common.json import ModelEncoder
 from .models import Presentation
 from django.views.decorators.http import require_http_methods
 import json
-from attendees.api_views import ConferenceListEncoder
 from events.models import Conference
+
+
+class ConferenceListEncoder(ModelEncoder):
+    model = Conference
+    properties = ["name"]
 
 
 class PresentationListEncoder(ModelEncoder):
